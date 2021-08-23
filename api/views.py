@@ -35,14 +35,15 @@ class ImageViewSet(viewsets.ViewSet):
         serializer = BookSerializer(book)
         return Response(serializer.data)
 
-    def update(self, request, pk = None):
-        book = BookSerializer.objects.get(pk= pk)
-
-        serializer = BookSerializer(book, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # def update(self, request, pk = None):
+    #
+    #     book = BookSerializer.objects.get(pk= pk)
+    #
+    #     serializer = BookSerializer(book, data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk= None):
         book = Book.objects.get(pk=pk)
@@ -68,14 +69,14 @@ class VideoViewSet(viewsets.ViewSet):
         serializer = VideoSerializer(video)
         return Response(serializer.data)
 
-    def update(self, request, pk = None):
-        video = BookSerializer.objects.get(pk= pk)
-
-        serializer = VideoSerializer(video, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # def update(self, request, pk = None):
+    #     video = BookSerializer.objects.get(pk= pk)
+    #
+    #     serializer = VideoSerializer(video, data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk= None):
         video = Video.objects.get(pk=pk)
