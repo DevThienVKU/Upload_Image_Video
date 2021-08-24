@@ -1,10 +1,11 @@
 from django.urls import path, include
-from .views import ImageViewSet, VideoViewSet
+from .views import Upload_Image_Video_Viewset
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('images', ImageViewSet, basename='images')
-router.register('videos', VideoViewSet, basename='videos')
+router.register('albums', Upload_Image_Video_Viewset, basename='albums')
+
+# router.register('videos', VideoViewSet, basename='videos')
 
 
 urlpatterns = [

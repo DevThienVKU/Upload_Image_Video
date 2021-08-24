@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import Book, Video
+from .models import Upload_Image_Video
 
-class BookSerializer(serializers.HyperlinkedModelSerializer):
+class Upload_Image_Video_Serializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Book
-        fields = ['id', 'title', 'cover']
+        model = Upload_Image_Video
+        fields = ['id', 'title', 'date', 'caption', 'cover', 'type']
 
-class VideoSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Video
-        fields = ['id', 'caption', 'title', 'video']
+# class VideoSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Video
+#         fields = ['id', 'caption', 'title', 'video']
