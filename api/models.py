@@ -7,9 +7,7 @@ def upload_path(instance, filename):
     return '/'.join(['album', str(instance.title), filename])
 
 
-
 class Upload_Image_Video(models.Model):
-
     choices = (('I', 'Image'),
               ('V', 'Video'))
 
